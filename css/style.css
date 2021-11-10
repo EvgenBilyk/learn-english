@@ -1,0 +1,11 @@
+#outBlock {
+    flex-wrap:wrap;
+    text-align: center;
+    display: flex;
+    align-items:flex-start;
+}
+
+
+.hide {
+    display: none;
+}
