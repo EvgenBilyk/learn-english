@@ -23,7 +23,7 @@ class Accardion {
                 </button>
             </h2>
             <div id="collapse${this.idBlock + i}" class="accordion-collapse collapse" aria-labelledby="heading${this.idBlock + i}"
-                data-bs-parent="#${this.idBlock + i}">
+                data-bs-parent="#${this.idBlock}">
                 <div class="accordion-body">
                     <div class="p-3 mb-2 bgGreenOne text-start text-dark">${this.arrayWord[i][1]}</div>
                 </div>
