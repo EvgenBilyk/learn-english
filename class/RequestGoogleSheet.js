@@ -36,9 +36,9 @@ class RequestGoogleSheet {
                 });
 
             if (this.nameList === "listBlock") {
-                let content = new BlockContent(response[0].values, "#outBlock");
+                let content = new BlockContent(response[0].values);
                 content.render();
-                content.buttonHandler();
+                content.showButtonHandler();
                 content.showPicture();
 
 
