@@ -81,8 +81,16 @@ class ListContent {
             else if (elem["type"] === "youtube") {
 
                 let videoLink = elem.value;
-                let findKeyVideo = videoLink.indexOf('=');
-                let keyVideo = videoLink.slice(findKeyVideo + 1, videoLink.length);
+                let find = videoLink.indexOf('=');
+                let keyVideo = "";
+
+                if (find > 0) {
+                    keyVideo = videoLink.slice(find + 1, videoLink.length);
+                } else if (find === -1) {
+                    let neStandart = videoLink.split('').reverse().join('');
+                    let findNew = neStandart.indexOf('/');
+                    keyVideo = neStandart.slice(0, findNew).split('').reverse().join('');
+                }
 
                 let tegVideo = `<iframe width="560" height="315" src="https://www.youtube.com/embed/${keyVideo}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`
 
