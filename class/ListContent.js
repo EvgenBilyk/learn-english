@@ -79,8 +79,15 @@ class ListContent {
                     `;
             }
             else if (elem["type"] === "youtube") {
+
+                let videoLink = elem.value;
+                let findKeyVideo = videoLink.indexOf('=');
+                let keyVideo = videoLink.slice(findKeyVideo + 1, videoLink.length);
+
+                let tegVideo = `<iframe width="560" height="315" src="https://www.youtube.com/embed/${keyVideo}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`
+
                 accordionItem += `
-                <div class="accordion-item">
+            
                     <h2 class="accordion-header" id="heading${elem.contentID + index}">
                         <button class="accordion-button collapsed bgGreenThree" type="button" data-bs-toggle="collapse"
                             data-bs-target="#collapse${elem.contentID + index}" aria-expanded="false" aria-controls="collapse${elem.contentID + index}">
@@ -90,7 +97,7 @@ class ListContent {
                     <div id="collapse${elem.contentID + index}" class="accordion-collapse collapse" aria-labelledby="heading${elem.contentID + index}"
                         data-bs-parent="#${elem.contentID}_item">
                         <div class="accordion-body">
-                        <div class="frame_blc">${elem.value}</div>                                            
+                        <div class="frame_blc">${tegVideo}</div>                                            
                         </div>
                     </div>
                 </div>
