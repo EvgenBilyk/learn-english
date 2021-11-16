@@ -35,7 +35,9 @@ class BlockContent {
                     `
         <div class="col flex-item" >
             <div class="card h-100">
+            <div class="img-card">
                 <img class="hide" id=${elem.category + "__" + elem.order} src=${elem.linkImage}" alt="${elem.linkImageDescription}">
+                </div>
                 <div class="card-body">
                     <h5 class="card-title text-center text-success text-uppercase fs-6 fw-bold">${elem.tema}</h5>
                     <p class="card-text text-start fw-light fst-italic">${elem.tema_discription}</p>                
@@ -59,7 +61,9 @@ class BlockContent {
                     `
         <div class="col flex-item">
             <div class="card h-100">
+            <div class="img-card">
                 <img class="hide" id=${elem.category + "__" + elem.order} src=${elem.linkImage}" alt="${elem.linkImageDescription}">
+                </div>
                 <div class="card-body">
                     <h5 class="card-title text-center text-success text-uppercase fs-6 fw-bold">${elem.tema}</h5>
                     <p class="card-text text-start fw-light fst-italic">${elem.tema_discription}</p>                
@@ -82,7 +86,9 @@ class BlockContent {
                     `
         <div class="col flex-item">
             <div class="card h-100">
+            <div class="img-card">
                 <img class="hide" id=${elem.category + "__" + elem.order} src=${elem.linkImage}" alt="${elem.linkImageDescription}">
+                </div>
                 <div class="card-body">
                     <h5 class="card-title text-center text-success text-uppercase fs-6 fw-bold">${elem.tema}</h5>
                     <p class="card-text text-start fw-light fst-italic">${elem.tema_discription}</p>                
