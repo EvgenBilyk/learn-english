@@ -94,8 +94,7 @@ class ListContent {
 
                 let tegVideo = `<iframe width="560" height="315" src="https://www.youtube.com/embed/${keyVideo}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`
 
-                accordionItem += `
-            
+                accordionItem += `            
                     <h2 class="accordion-header" id="heading${elem.contentID + index}">
                         <button class="accordion-button collapsed bgGreenThree" type="button" data-bs-toggle="collapse"
                             data-bs-target="#collapse${elem.contentID + index}" aria-expanded="false" aria-controls="collapse${elem.contentID + index}">

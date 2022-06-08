@@ -41,7 +41,6 @@ class RequestGoogleSheet {
                 content.showButtonHandler();
                 content.showPicture();
 
-
             } else if (this.nameList === "listWords") {
 
                 let listContent = new ListContent(response[0].values);

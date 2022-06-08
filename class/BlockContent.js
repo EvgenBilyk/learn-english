@@ -1,7 +1,6 @@
 class BlockContent {
     constructor(content) {
         this.content = content;
-
     }
 
     render() {
@@ -23,6 +22,7 @@ class BlockContent {
         let listWord = "";
         let listRules = "";
         let listVerbs = "";
+        let listRecords = "";
 
         let arrWords = arrContent[0];
         let arrRules = arrContent[1];
@@ -104,13 +104,48 @@ class BlockContent {
         </div>`}
         });
 
+        //робимо додаткову вкладку для запису нових слів до гугл таблиці
+        listRecords += `
+            <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" id="select-category">
+                <option selected value="" disabled >select a category</option>`;
+
+        arrWords.map(elem => {
+            if (+elem.show && elem.category === "words") {
+                listRecords += `<option value="${elem.contentID}">${elem.tema}</option>`
+            }
+        });
+
+        listRecords += `</select>
+        <div class="container-new">
+            <div class="row mt-4">
+                <div class="form-floating">
+                    <textarea class="form-control" placeholder="Leave a comment here" id="record-eng-word" style="height: 100%"></textarea>
+                    <label for="record-eng-word">eng</label>
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="form-floating">
+                    <textarea class="form-control" placeholder="Leave a comment here" id="record-ukr-word" style="height: 100%"></textarea>
+                    <label for="record-ukr-word">ukr</label>
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <button type="button" class="btn btn-success" id="record-word">RECORD</button>
+            </div>
+        </div>`;
+
         document.querySelector("#outBlockWords").innerHTML = listWord;
         document.querySelector("#outBlockRules").innerHTML = listRules;
         document.querySelector("#outBlockVerbs").innerHTML = listVerbs;
+        document.querySelector("#outBlockRecords").innerHTML = listRecords;
         this.temaButtonHandler();
 
         let content = new RequestGoogleSheet("1GjGzhZvxOw890IDWITKVa35yYrcCDpLPmGx6Ns1HCFQ", "listWords");
         content.answer();//запускаем наполнение выпадающего списка для кнопки show
+        let record = new RecordWords("#record-eng-word", "#record-ukr-word", "#record-word", "#select-category");
+        record.btnRecordHendler();
 
     }
 
