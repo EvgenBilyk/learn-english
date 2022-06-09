@@ -106,6 +106,7 @@ class BlockContent {
 
         //робимо додаткову вкладку для запису нових слів до гугл таблиці
         listRecords += `
+        <div class="container-new">
             <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" id="select-category">
                 <option selected value="" disabled >select a category</option>`;
 
@@ -116,23 +117,16 @@ class BlockContent {
         });
 
         listRecords += `</select>
-        <div class="container-new">
-            <div class="row mt-4">
-                <div class="form-floating">
-                    <textarea class="form-control" placeholder="Leave a comment here" id="record-eng-word" style="height: 100%"></textarea>
-                    <label for="record-eng-word">eng</label>
-                </div>
+           <div class="mb-3">
+                <label for="record-eng-word" class="form-label text-primary fw-bold">ENGLISH</label>
+                <textarea class="form-control font-monospace text-primary" id="record-eng-word" rows="5"></textarea>
             </div>
-
-            <div class="row mt-4">
-                <div class="form-floating">
-                    <textarea class="form-control" placeholder="Leave a comment here" id="record-ukr-word" style="height: 100%"></textarea>
-                    <label for="record-ukr-word">ukr</label>
-                </div>
+            <div class="mb-3">
+                <label for="record-ukr-word" class="form-label fw-bold text-success">UKRAINIAN</label>
+                <textarea class="form-control font-monospace text-success" id="record-ukr-word" rows="5"></textarea>
             </div>
-
             <div class="row mt-4">
-                <button type="button" class="btn btn-success" id="record-word">RECORD</button>
+                <button type="button" class="btn btn-success fw-bold" id="record-word">RECORD</button>
             </div>
         </div>`;
 

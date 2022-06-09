@@ -64,5 +64,6 @@ div.p-3 {
 }
 
 .container-new {
-  width: 100%;
+  width: 90%;
+  margin: 30px auto;
 }
